@@ -1,0 +1,41 @@
+<button (click)="goBack()">戻る</button>
+<div class="main-content">
+  <aside>
+    <app-side-menu></app-side-menu>
+  </aside>
+
+  <article>
+    <div class="reqest-form">
+    <p class="title">タイトル</p>
+    <input id="text" name="text" class="form-title" type="text" placeholder="タイトル"/>
+    </div>
+
+    <div class="reqest-form">
+      <p class="price">価格</p>
+      <input id="price" name="text" class="form-price" type="text" placeholder="価格"/>
+
+      <select class="bid-method" name="bidMethod" (change)="show()">
+        <option value="">入札方式を選択してください。</option>
+        <option *ngFor="let item of data"
+        [value]="item.value"
+        [disabled]="item.disabled"
+        [selected]="item.value === selected">{{item.label}}</option>
+      </select>
+    </div>
+
+    <div class="reqest-form">
+    <p class="explanation">説明</p>
+    <input id="explanation" name="text" class="form-explanation" type="text" placeholder="説明"/>
+    </div>
+
+    <div class="reqest-form">
+    <p class="form-file">添付画像</p>
+    <input type="file" name="example" accept="image/*" multiple>
+    </div>
+
+    <div class="submit-button">
+      <input type="submit" class="submit-button" value="確定" [disabled]="invalid" />
+    </div>
+  </article>
+</div>
+
