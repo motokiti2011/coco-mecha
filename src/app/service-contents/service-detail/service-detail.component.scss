@@ -1,0 +1,30 @@
+.content {
+  display: flex;
+  // justify-content: space-between;
+}
+
+
+.button-area {
+  width: 20%;
+  margin-top: 5%;
+  margin-left: 5%;
+
+  .button-item {
+    margin-top: 30px;
+  }
+
+  .btn-border {
+    width: 80%;
+    height: 40px;
+  }
+
+}
+
+
+.contents-area {
+  width: 50%;
+}
+
+.detail-area {
+  width: 20%;
+}

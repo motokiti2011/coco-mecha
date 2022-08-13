@@ -21,7 +21,7 @@ article {
 }
 
 div.tab-area-base {
-  height: 50px;
+  height: 60px;
   width: 90%;
   margin: auto;
 }
@@ -29,23 +29,34 @@ div.tab-area-base {
 ul.tab-menu-base {
   overflow: hidden;
   list-style: none;
-  margin: 0px auto;
+  margin-left: 8vh;
   padding: 0;
-  border-bottom: 5px solid rgb(240, 240, 240);
+  // border-bottom: 5px solid rgb(240, 240, 240);
+  height: 8vh;
 }
 
 ul.tab-menu-base li {
   float: left;
-  margin: 20px 8px 0 0 ;
-  padding: 0;
-  background: rgb(180, 180, 180);
+  margin: 10px 8px 0 0 ;
   border-radius: 10px 10px 0 0;
+  padding: 0;
+  // background: rgb(180, 180, 180);
+  background: rgb(240, 240, 240);
+  // background:#f7efa2;
   height: 100%;
-  width: 200px;
+  width: 20vh;
   font-size: 1.5em;
   text-align: center;
+  padding-top: 2vh;
 }
 
 ul.tab-menu-base li.current {
-  background: rgb(240, 240, 240);
+  // background: rgb(240, 240, 240);
+  background: #e3a44e;  
+}
+
+.select-btn {
+  margin-left: -75vh;
+  margin-top: 6vh;
+  width: 10vh;
 }

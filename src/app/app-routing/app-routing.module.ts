@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainMenuComponent } from '../main-menu/main-menu.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ServiceListComponent } from '../service-list/service-list.component';
-import { ServiceCreateComponent } from '../service-create/service-create.component';
+import { ServiceCreateComponent } from '../service-contents/service-create/service-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main_menu', pathMatch: 'full' },

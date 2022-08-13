@@ -4,7 +4,7 @@ import { user } from 'src/app/entity/user';
 
 
 export interface DialogData {
-  userName:string;
+  mailaddress:string;
   passwd:string;
   selected:boolean;
   reissuePasswd:boolean;
@@ -21,13 +21,12 @@ export class LoginComponent implements OnInit {
 
   // ログイン情報
   login = {
-    userName:'',
+    mailaddress:'',
     passwd:'',
     selected:false,
     reissuePasswd:false,
     newResister:false
   }
-
 
   constructor(
     public _dialogRef: MatDialogRef<LoginComponent>,
@@ -40,7 +39,7 @@ export class LoginComponent implements OnInit {
 
   // logoutボタンクリックイベントで呼び出される関数
   actionFunction() {
-    console.log(this.login.userName);
+    console.log(this.login.mailaddress);
     console.log(this.login.passwd);
     this.data = this.login;
 
@@ -70,6 +69,7 @@ export class LoginComponent implements OnInit {
     this._dialogRef.close();
   }
   onNoClick(): void {
-    this._dialogRef.close();
+    console.log('ログイン押した')
+    // this._dialogRef.close();
   }
 }

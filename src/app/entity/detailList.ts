@@ -1,16 +1,20 @@
 export interface detailList {
   // サービスID
-  id: number;
+  id: string;
   // check
   check: boolean;
   // タイトル
   title: string;
   // 内容
   contents: string
+  // 地域
+  area:string;
+  // カテゴリー
+  category:string;
   // 価格
-  price:number;
+  price :string;
   // 期間
-  whet: number;
+  whet: string;
   // 終了日
-  endDate: number;
+  endDate: string;
 }

@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { serviceContents } from '../../../entity/serviceContents';
-import { isNil } from 'lodash';
+import { 
+  isNil as _isNil,
+  find as _find,
+} from 'lodash';
+
+import { TransactionMenuService } from 'src/app/transaction-menu/transaction-menu.service'
 
 import { ServiceContents } from '../../../mock-test';
 
@@ -25,8 +30,19 @@ export class TransactionDetailComponent implements OnInit {
   /** インデックス */
   pageIndex: number[] = [];
 
+  selected = '';
+
+  orderMenu = [
+    {id:1 ,value:'残り期間が短い順'  },
+    {id:2 ,value:'残り期間が長い順'  },
+    {id:3 ,value:'価格が安い順'  },
+    {id:4 ,value:'価格が高い順'  },
+  ]
+
+
   constructor(
     private location :Location,
+    private service: TransactionMenuService,
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +65,7 @@ export class TransactionDetailComponent implements OnInit {
     contents.forEach((content) => {
       // 6コンテンツ分抽出する
       if(count < 6) {
-        if(!(isNil(content))) {
+        if(!(_isNil(content))) {
           this.displayContentsList.push(content);
         }
       } else {
@@ -135,7 +151,19 @@ export class TransactionDetailComponent implements OnInit {
   onContentsSelect(e :any):void {
     console.log(e);
   }
+  
+  /**
+   *  並び順変更イベント
+   * 
+   */
+   changeOrder() {
+    console.log(this.selected)
+    const order = _find(this.orderMenu, order => order.value === this.selected)
 
+    if(!_isNil(order)) {
+      this.displayContentsList = this.service.sortOrder(this.displayContentsList, order.id);
+    }
+  }
 
 
   /**

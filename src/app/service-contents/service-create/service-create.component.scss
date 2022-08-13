@@ -1,0 +1,199 @@
+.main-content {
+  display: flex;
+}
+
+aside {
+  width: 10%;
+  margin-right: 30px;
+}
+
+article {
+  width: 100%;
+  margin-top: 3vh;
+  margin-left: 5vh;
+  // background-color: blue;
+}
+
+.margin {
+  margin-left: 6vh;
+}
+
+.mandatory {
+  color: #ffff;
+  background-color: #cc0000;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+}
+
+.error-message {
+  color: #ffff;
+  background-color: #cc0000;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  margin-right: 2vh;
+  width: 20%;
+}
+
+
+.reqest-form-title {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+
+  .title {
+    width: 15%;
+  }
+
+  .form-title {
+    border: 1px solid #000;
+    margin-left: 5vh;
+    width: 50vh;
+    height: 2.5em;
+  }
+}
+
+.reqest-form-area {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+
+  .area {
+    width: 15%;
+  }
+
+  .area-select {
+    margin-left: 5vh;
+    font-size: 2vh;
+    width: 30vh;
+  }
+
+  .category-select {
+    margin-left: 5vh;
+    font-size: 2vh;
+    width: 35vh;
+  }
+}
+
+.reqest-form-price {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+
+  .price {
+    width: 15%;
+  }
+
+  .form-price {
+    border: 1px solid #000;
+    margin-left: 2.9vh;
+    margin-right: 2.5vh;
+    width: 30vh;
+    height: 2.5em;
+  }
+
+  .estimate {
+    margin-left: 3vh;
+  }
+
+  .bid-method {
+    font-size: 2vh;
+    width: 30vh;
+  }
+}
+
+
+.reqest-form-explanation {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+
+  .explanation {
+    width: 15%;
+  }
+
+  .form-explanation {
+    border: 1px solid #000;
+    margin-left: 5vh;
+    // margin-right: 3vh;
+    width: 50vh;
+    height: 10em;
+  }
+}
+
+.reqest-form-preferredDate {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+  width: 100%;
+
+  .preferredDate {
+    width: 15%;
+  }
+
+  .form-preferredDate {
+    border: 1px solid #000;
+    margin-left: 5vh;
+    width: 20vh;
+    height: 3vh;
+  }
+
+}
+
+.error-message-day {
+  color: #ffff;
+  background-color: #cc0000;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  margin-right: 2vh;
+  width: 20%;
+}
+
+
+.reqest-form-file {
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-indent: 1em;
+  font-size: 2vh;
+
+  .form-file {
+    margin-top: 10px;
+  }
+
+  .file {
+    margin-left: 25vh;
+  }
+}
+
+.example-form-field {
+  margin-left: 2.8vh;
+  // margin: 1em 0.5em 1.5em 1em;
+}
+
+
+.submit-button {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  margin-left: 17.5vh;
+  width: 30%;
+  font-size: 2vh;
+}

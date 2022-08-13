@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { serviceContents } from 'src/app/entity/serviceContents';
 import { Location } from '@angular/common';
-import { isNil} from 'lodash';
-
+import { 
+  isNil as _isNil,
+  find as _find,
+} from 'lodash';
+import { TransactionMenuService } from 'src/app/transaction-menu/transaction-menu.service'
 import { ServiceContents } from 'src/app/mock-test';
 
 @Component({
@@ -25,8 +28,18 @@ export class BrowsingHistoryDetailComponent implements OnInit {
   /** インデックス */
   pageIndex: number[] = [];
 
+  selected = '';
+
+  orderMenu = [
+    {id:1 ,value:'残り期間が短い順'  },
+    {id:2 ,value:'残り期間が長い順'  },
+    {id:3 ,value:'価格が安い順'  },
+    {id:4 ,value:'価格が高い順'  },
+  ]
+
   constructor(
-    private location :Location,
+    private location: Location,
+    private service: TransactionMenuService,
   ) { }
 
   ngOnInit(): void {
@@ -37,10 +50,10 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * 初回表示するサービスを取得し設定する
    * @return void
    */
-   private setServiceContents() :void {
+  private setServiceContents(): void {
     const contents = ServiceContents;
     // コンテンツ全体から総ページ数を算出する
-    this.totalPage = Math.round(contents.length/6);
+    this.totalPage = Math.round(contents.length / 6);
     // 現在のページを設定する
     this.currentPage = 1;
     // ページごとに表示するサービスを設定する
@@ -48,8 +61,8 @@ export class BrowsingHistoryDetailComponent implements OnInit {
     // 6個表示のためページ数計算含め行う
     contents.forEach((content) => {
       // 6コンテンツ分抽出する
-      if(count < 6) {
-        if(!(isNil(content))) {
+      if (count < 6) {
+        if (!(_isNil(content))) {
           this.displayContentsList.push(content);
         }
       } else {
@@ -65,15 +78,15 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * ページ設定を行う
    * @return void
    */
-  private pageSetting():void {
+  private pageSetting(): void {
     // ページ数設定を行う
     const pageIndex = [];
     const startIndex = 0;
     const endIndex = 0;
-    if(this.currentPage == 1 ) {
+    if (this.currentPage == 1) {
       // 初期処理の場合１ページ目から表示する
       this.initPageSetting();
-    } else if(this.currentPage === this.totalPage) {
+    } else if (this.currentPage === this.totalPage) {
       // 最終ページ選択時
 
     }
@@ -91,11 +104,11 @@ export class BrowsingHistoryDetailComponent implements OnInit {
     // index後の三点リーダ表示フラグ
     let flg = false;
 
-    if(this.totalPage < 6) {
+    if (this.totalPage < 6) {
       maxIndex = this.totalPage;
     }
 
-    for(var i = 0; i < maxIndex; i++) {
+    for (var i = 0; i < maxIndex; i++) {
       this.pageIndex.push(count);
       count++;
     }
@@ -107,7 +120,7 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * 前へボタン押下イベント
    * @return void
    */
-  onContentsForward():void {
+  onContentsForward(): void {
 
   }
 
@@ -115,7 +128,7 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * 次へボタン押下イベント
    * @return void
    */
-  onContentsNext():void {
+  onContentsNext(): void {
 
   }
 
@@ -123,7 +136,7 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * Indexボタン押下イベント
    * @return void
    */
-  onContentsIndex(index :number):void {
+  onContentsIndex(index: number): void {
     console.log(index);
   }
 
@@ -131,7 +144,7 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    * サービス選択時イベント
    * @return void
    */
-  onContentsSelect(e :any):void {
+  onContentsSelect(e: any): void {
     console.log(e);
   }
 
@@ -143,6 +156,19 @@ export class BrowsingHistoryDetailComponent implements OnInit {
    */
   goBack() {
     this.location.back();
+  }
+
+  /**
+ *  並び順変更イベント
+ * 
+ */
+  changeOrder() {
+    console.log(this.selected)
+    const order = _find(this.orderMenu, order => order.value === this.selected)
+
+    if (!_isNil(order)) {
+      this.displayContentsList = this.service.sortOrder(this.displayContentsList, order.id);
+    }
   }
 
 }

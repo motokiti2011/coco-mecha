@@ -1,20 +1,26 @@
 <!-- <p>取引メニュー（マイリスト）</p> -->
 
-<button (click)="goBack()">戻る</button>
-
 <div class="service-menu wrapper">
 
   <article>
-    <input id="serch" name="serch" class="serch-form" type="serch" placeholder="キーワードを入力してください。"/>
 
-    <div class="service-contents">
-      <div class="contants">
-        <div *ngFor="let contents of displayContentsList">
-          <div class="item" (click)="onContentsSelect(contents.id)">{{contents.title}}</div>
-        </div>
-      </div>
+    <div>
+      <select class="select-btn" [(ngModel)]="selected" (change)="changeOrder()">
+        <option value="">並び順</option>
+        <option *ngFor="let item of orderMenu"
+        [value]="item.value"
+        [selected]="item.value === selected">{{item.value}}
+      </option>
+      </select>
     </div>
 
+    <div class="contants">
+      <div *ngFor="let contents of displayContentsList">
+        <div class="item" (click)="onContentsSelect(contents.id)">{{contents.title}}</div>
+        <div class="title" (click)="onContentsSelect(contents.id)">{{contents.title}}</div>
+      </div>
+    </div>
+    
     <div class="service-index" >
       <input type="button" class="btn-border" on-click="onContentsForward" value="前へ">
       <div *ngFor="let index of pageIndex">
@@ -24,4 +30,4 @@
     </div>
   </article>
 
-</div><!-- /.service-menu-->
+</div>
