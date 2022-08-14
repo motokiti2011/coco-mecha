@@ -13,26 +13,29 @@
   </div>
 
   <div class="contents-area">
-    <div>{{serviceTitle}}</div>
-    <p>ここに画像を貼りたい</p>
+    <div class="title">{{serviceTitle}}</div>
+    <img class="img" src="assets/images/sample11.png" alt="image1">
+    <div class="explanation">{{dispExplanation}}</div>
   </div>
-
 
   <div class="detail-area">
     <div>
       <input type="button" class="btn-border" on-click="goBack()" value="一覧に戻る">
     </div>
 
-    <div>
+    <div class="ymd">
       <p>日付</p>
+      {{dispYMD}}
     </div>
 
-    <div>
+    <div class="price">
       <p>価格</p>
+      {{dispPrice}}
     </div>
 
-    <div>
+    <div class="area">
       <p>場所</p>
+      {{dispArea}}
     </div>
 
   </div>

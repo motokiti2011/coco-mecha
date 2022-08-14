@@ -75,7 +75,7 @@ export class ServiceSerchConditionsComponent implements OnInit {
     // 検索条件の都道府県IDに選択地を設定する
     this.serchCondition.areaNum = i;
     this.router.navigate(["service_list"],
-    {queryParams:{areaNum :this.serchCondition.areaNum ,category: 0}});  
+    {queryParams:{areaNum :this.serchCondition.areaNum ,category: 0}});
   }
 
   /**

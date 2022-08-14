@@ -1,0 +1,61 @@
+<div class="maincontent">
+  <div class="sidmanu">
+    <app-side-menu></app-side-menu>
+  </div>
+
+  <div class="main-area">
+    <input type="button_item" class="btn" on-click="onReturn()" value="詳細に戻る">
+    <div class="messages">
+    </div>
+  </div>
+
+  <div class="btn-area">
+    <input type="btn_item" class="btn" on-click="onReturn()" value="一覧に戻る">
+    <input type="btn_item" class="btn" on-click="onReturn()" value="質問">
+    <div *ngId="authUserDiv">
+      <input type="button_item" class="btn" on-click="onReturn()" value="メッセージ公開レベル設定">
+    </div>
+
+    <div *ngId="openDiv">
+      <input type="button_item" class="btn" on-click="onReturn()" value="メッセージ許可申請">
+    </div>
+
+    <div *ngId="privateDiv">
+      <p>このサービスのメッセージは非公開です。</p>
+    </div>
+  </div>
+
+  <div class="sb-area">    
+    <div class="sb-disp">
+      <p class="title">サービスタイトル</p>
+      <div class="item">{{dispTitle}}</div>
+    </div>
+    
+    <div class="sb-disp">
+      <p class="title">日付</p>
+      <div class="item">{{dispYmd}}</div> 
+    </div>
+    
+    <div class="sb-disp">
+      <p class="title">価格</p>
+      <div class="item">{{dispPrice}}</div>
+    </div>
+
+    <div class="sb-disp">
+      <p class="title">地域</p>
+      <div class="item">{{dispArea}}</div>
+    </div>
+    <div class="sb-disp">
+      画像
+    </div>
+    
+    <div class="sb-disp">
+      <p class="title">説明</p>
+      <div class="item">{{dispExplanation}}</div>
+    </div>
+  </div>
+
+</div>
+
+
+

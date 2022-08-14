@@ -3,7 +3,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginComponent } from '../modal/login/login.component';
 import { HeaderMenuService } from './header-menu.service';
-import { user } from '../entity/user';
 import { loginUser } from '../entity/loginUser';
 import { AuthService } from '../auth/auth.service';
 

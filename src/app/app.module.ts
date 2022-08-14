@@ -41,6 +41,8 @@ import { ServiceDetailComponent } from './service-contents/service-detail/servic
 import { TrimPipe } from './pipe/trim-pipe/trim-pipe';
 import { NextModalComponent } from './modal/next-modal/next-modal/next-modal.component';
 import { ServiceListSideMenuComponent } from './service-contents/service-list/service-list-side-menu/service-list-side-menu/service-list-side-menu.component';
+import { MessageDialogComponent } from './modal/message-dialog/message-dialog.component';
+import { ServiceTransactionComponent } from './service-contents/service-transaction/service-transaction.component';
 
 const ROUTE_TABLE: Routes = [
   { path: '', redirectTo: '/main_menu', pathMatch: 'full' },
@@ -52,6 +54,7 @@ const ROUTE_TABLE: Routes = [
   { path: 'reissue_passwd_component', component: ReissuePasswdComponent },
   { path: 'sign-up-component', component: SignUpComponent },
   { path: 'service-detail-component', component: ServiceDetailComponent },
+  { path: 'service-transaction-component', component: ServiceTransactionComponent },
 ]
 
 @NgModule({
@@ -79,6 +82,8 @@ const ROUTE_TABLE: Routes = [
     TrimPipe,
     NextModalComponent,
     ServiceListSideMenuComponent,
+    MessageDialogComponent,
+    ServiceTransactionComponent,
   ],
   entryComponents: [
     TransactionListComponent,
